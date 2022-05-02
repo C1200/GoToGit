@@ -8,13 +8,18 @@
 </head>
 <body>
     <h1>Redirecting...</h1>
+
+    <p>Powered by <a href="https://git.c1200.cf/GoToGit">GoToGit</a></p>
     
     <script>
+        var GIT_URL = "https://github.com/C1200";
+        var PATH_SEGMENTS_TO_SKIP = 0;
+
         var url = location.pathname;
         var parts = url.split("/");
-        parts.shift();
+        parts.splice(0, PATH_SEGMENTS_TO_SKIP + 1);
 
-        var redirectTo = "https://github.com/C1200";
+        var redirectTo = GIT_URL;
 
         if (parts.length >= 1) {
             redirectTo += "/" + parts[0];
